@@ -3,11 +3,29 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+
+import "channels"
+import "bootstrap";
+import "jquery"
+import "@popperjs/core";
+import "../stylesheets/application.scss";
+
+
+require("bootstrap")
+require("jquery")
+
+require.context("../images", true);
+window.jQuery = $;
+window.$ = $;
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+
+
